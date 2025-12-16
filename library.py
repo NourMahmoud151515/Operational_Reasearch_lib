@@ -234,7 +234,19 @@ class ORLibraryWindow(QWidget):
                 return
 
             # Create and show window
+            # Store as instance variable to prevent garbage collection
             window_instance = window_class()
+            
+            # Store reference based on problem number
+            if problem_num == 1:
+                self.nour_window = window_instance
+            elif problem_num == 3:
+                self.nour_elhouda_window = window_instance
+            elif problem_num == 4:
+                self.adem_window = window_instance
+            elif problem_num == 5:
+                self.slim_window = window_instance
+            
             window_instance.show()
 
         except Exception as e:
